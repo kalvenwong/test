@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.multipart.maxSize" value="3097152"></constant><!-- 上传文件大小全局限制 -->
+	<package name="house" extends="struts-default" namespace="/">
+		<interceptors>
+			<interceptor name="mytime" class="com.interceptor.MyTimeInterceptor" />
+			<interceptor name="login" class="com.interceptor.LoginInterceptor" />
+			<interceptor-stack name="interstack">
+				<interceptor-ref name="mytime" />
+				<interceptor-ref name="login" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		
+		<default-interceptor-ref name="interstack" />
+		
+		<global-results>
+			<result name="loginuser">page/login_struts2.jsp</result>
+		</global-results>
+		
+		<action name="*house" class="com.action.HouseAction" method="{1}" >
+			<result name="add_success">page/success2.jsp</result>
+        	<result name="add_fail">page/fail2.jsp</result>
+        	<result name="show_success">page/house_list.jsp</result>
+        	<result name="show_fail">page/showhousefail.jsp</result>
+		</action>
+		
+		<action name="*user" class="com.action.UsersAction" method="{1}">
+			<interceptor-ref name="defaultStack" /><!-- 使用系统默认拦截,而不用自定义拦截 -->
+			<result name="reg_success">page/login_struts2.jsp</result>
+			<result name="login_success" type="redirectAction">showHousehouse</result>
+			<result name="login_fail" >page/fail.jsp</result><!--no  -->
+			<result name="reg_fail" >page/fail.jsp</result><!-- no -->
+		</action>
+		
+		
+		<!-- 上传文件 -->
+		<action name="*Upload" class="com.action.FileUploadAction" method="{1}">
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">
+				image/png,image/gif,image/jpeg
+				</param>
+				<param name="maximumadaix">3097152</param><!-- 上传文件大小 3M-->
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" /><!-- 使用系统默认拦截-->
+			<param name="savePath">/upload</param><!-- 上传路径 -->
+			<result name="upload_success">page/uploadsuccess.jsp</result>
+			<result name="upload_fail">page/uploadfail.jsp</result>
+		</action>
+	</package>
+</struts>    

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mystruts[
+<!ELEMENT mystruts (actions)>
+<!ELEMENT actions (action*)>
+<!ELEMENT action (result*)>
+<!ATTLIST action
+name CDATA #REQUIRED
+class CDATA #REQUIRED>
+<!ELEMENT result (#PCDATA)>
+<!ATTLIST result
+name CDATA #IMPLIED
+redirect (true|false) "false">
+]>
+<mystruts>
+	<actions>
+		
+		<action name="addhouse" class="cn.jbit.action.HouseAction">
+        	<result name="success">page/success2.jsp</result>
+        	<result name="fail">page/fail2.jsp</result>
+		</action>						
+	</actions>
+</mystruts>
