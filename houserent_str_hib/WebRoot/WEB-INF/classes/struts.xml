@@ -14,7 +14,7 @@
 			</interceptor-stack>
 		</interceptors>
 		
-		<default-interceptor-ref name="interstack" /> 
+		 <default-interceptor-ref name="interstack" /> 
 		
 		<global-results>
 			<result name="loginuser">page/login_struts2.jsp</result>
@@ -57,7 +57,7 @@
 		</action>
 		
 		<!-- 分页显示房屋信息 -->
-		<action name="houseList" class="com.action.ManagerAction" method="houseListByPages">
+		<action name="houseListByPages" class="com.action.ManagerAction" method="houseListByPages">
 			<result name="success">page/manage.jsp</result>
 			<result name="input">page/xianshifail.jsp</result>
 		</action>
