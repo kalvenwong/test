@@ -13,7 +13,7 @@
 			</interceptor-stack>
 		</interceptors>
 		
-		<default-interceptor-ref name="interstack" />
+		<!-- <default-interceptor-ref name="interstack" /> -->
 		
 		<global-results>
 			<result name="loginuser">page/login_struts2.jsp</result>
@@ -47,6 +47,11 @@
 			<param name="savePath">/upload</param><!-- 上传路径 -->
 			<result name="upload_success">page/uploadsuccess.jsp</result>
 			<result name="upload_fail">page/uploadfail.jsp</result>
+		</action>
+		
+		<action name="arraysDataTransfer" class="com.action.TestAction" >
+			<result name="success">page/datetransuccess.jsp</result>
+			<result name="input">page/index.jsp</result>
 		</action>
 	</package>
 </struts>    
