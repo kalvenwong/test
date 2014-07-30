@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
+<constant name="struts.custom.i18n.resources" value="message" />
 <constant name="struts.multipart.maxSize" value="3097152"></constant><!-- 上传文件大小全局限制 -->
 	<package name="house" extends="struts-default" namespace="/">
 		<interceptors>
@@ -13,7 +14,7 @@
 			</interceptor-stack>
 		</interceptors>
 		
-		<!-- <default-interceptor-ref name="interstack" /> -->
+		<default-interceptor-ref name="interstack" /> 
 		
 		<global-results>
 			<result name="loginuser">page/login_struts2.jsp</result>
@@ -49,9 +50,18 @@
 			<result name="upload_fail">page/uploadfail.jsp</result>
 		</action>
 		
+		<!-- 自定义日期转换 -->
 		<action name="arraysDataTransfer" class="com.action.TestAction" >
 			<result name="success">page/datetransuccess.jsp</result>
 			<result name="input">page/index.jsp</result>
 		</action>
+		
+		<!-- 分页显示房屋信息 -->
+		<action name="houseList" class="com.action.ManagerAction" method="houseListByPages">
+			<result name="success">page/manage.jsp</result>
+			<result name="input">page/xianshifail.jsp</result>
+		</action>
+		
+		
 	</package>
 </struts>    

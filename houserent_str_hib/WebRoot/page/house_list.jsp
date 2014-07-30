@@ -104,7 +104,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <div class="main wrap">
 	<table class="house-list">
-dfgdfgfjghjghghj水电费大法官
+	
+<a href="/houserent_str_hib/houseListByPages.action?number=1">分页显示房屋信息</a>
+
 	<s:iterator value="houseList">
 	<!--迭代开始-->
 		<tr>
