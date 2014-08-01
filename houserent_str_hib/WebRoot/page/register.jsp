@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>青鸟租房 - 用户注册</title>
+<title><s:text name="register.title"></s:text></title>
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <script type="text/javascript" src="scripts/function.js"></script>
 </head>
@@ -20,35 +21,43 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="regLogin" class="wrap">
 	<div class="dialog">
 		<dl class="clearfix">
-			<dt>新用户注册</dt>
-			<dd class="past">填写个人信息</dd>
+			<dt><s:text name="register.newuserreg"></s:text></dt>
+			<dd class="past"><s:text name="register.infoform"></s:text></dd>
 		</dl>
+		<a href="/houserent_str_hib/language!chinese.action"><s:text name="register.cn"></s:text></a>
+		<a href="/houserent_str_hib/language!chinese.action"><s:text name="register.hk"></s:text></a>
+		<a href="/houserent_str_hib/language!englise.action"><s:text name="register.en"></s:text></a>
 		<div class="box">
 			<form action="registeruser.action" method="post">
 				<div class="infos">
+				
 					<table class="field">
 						<tr>
-							<td class="field">用 户 名：</td>
-							<td><input type="text" class="text" name="user.name" /> </td>
+							<td class="field"><s:text name="register.user.name"></s:text></td>
+							<td><input type="text" class="text" name="user.name" /> </td><td><s:fielderror fieldName="user.name"></s:fielderror></td>
 						</tr>
 						<tr>
-							<td class="field">密　　码：</td>
-							<td><input type="password" class="text" name="user.password" /></td>
+							<td class="field"><s:text name="register.user.password"></s:text></td>
+							<td><input type="password" class="text" name="user.password" /></td><td><s:fielderror fieldName="user.password"></s:fielderror></td>
 						</tr>
 						<tr>
-							<td class="field">确认密码：</td>
-							<td><input type="password" class="text" name="repassword" /> </td>
+							<!--
+							 <td class="field">确认密码：</td>
+							<td><input type="password" class="text" name="repassword" /> </td><td><s:fielderror fieldName="repassword"></s:fielderror></td>
+							 -->
+							 	<s:textfield name="repassword" key="register.user.repassword"/>
+							 	
 						</tr>
 						<tr>
-							<td class="field">电　　话：</td>
+							<td class="field"><s:text name="register.user.telephone"></s:text></td>
 							<td><input type="text" class="text" name="user.telephone" /> </td>
 						</tr>
 						<tr>
-							<td class="field">用户姓名：</td>
+							<td class="field"><s:text name="register.user.username"></s:text></td>
 							<td><input type="text" class="text" name="user.username" /> </td>				
 						</tr>
 					</table>
-					<div class="buttons"><input type="submit" name="submit" value="立即注册" /></div>
+					<div class="buttons">	<s:submit key="register.submit" /></div>
 				</div>
 			</form>
 		</div>

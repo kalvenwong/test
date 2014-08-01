@@ -40,6 +40,7 @@ public class UsersAction extends ActionSupport {
 			return "login_fail";
 		}
 	}
+	
 	/**
 	 * 注册处理
 	 * @return

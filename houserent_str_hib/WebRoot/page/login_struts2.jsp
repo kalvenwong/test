@@ -42,8 +42,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<s:password name="user.password" cssClass="text" required="true"/>
 							</td>
 						</tr>
-						<!--
-						<tr>
+						
+						<tr><!--
 							<td class="field">验 证 码：</td>
 							<td><input type="text" class="text verycode" name="veryCode" /></td>
 						</tr>

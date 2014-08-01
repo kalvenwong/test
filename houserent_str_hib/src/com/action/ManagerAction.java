@@ -30,13 +30,13 @@ public class ManagerAction extends ActionSupport {
 		FindPageByQueryBiz fpbqBiz=new FindPageByQueryBizImpl();
 		String hqlByPage="from House";
 		//得到当前页面所有的房屋对象
-		Map<String ,Object> map=new HashMap<String,Object>();
-		map.put("price", "2000");
+//		Map<String ,Object> map=new HashMap<String,Object>();
+//		map.put("price", "2000");
 		List<Object> hList=fpbqBiz.findPageByQuery(number, RECORD_SIZE, hqlByPage, null);
-		List<House> houseList = new ArrayList<House>();
+		 result = new ArrayList<House>();
 		for (Object object : hList) {
 			House obj = (House) object;
-			houseList.add(obj);
+			result.add(obj);
 		}
 		String hqlByCount="select count(id) from House";
 		//查询总房屋信息记录数

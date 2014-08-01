@@ -33,6 +33,7 @@
 			<result name="login_success" type="redirectAction">showHousehouse</result>
 			<result name="login_fail" >page/fail.jsp</result><!--no  -->
 			<result name="reg_fail" >page/fail.jsp</result><!-- no -->
+			<result name="input" >page/register.jsp</result><!-- no -->
 		</action>
 		
 		
@@ -62,6 +63,11 @@
 			<result name="input">page/xianshifail.jsp</result>
 		</action>
 		
-		
+		<!-- 转换语言 -->
+		<action name="language" class="com.action.LanguageAction">
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">page/register.jsp</result>
+			<result name="input">page/register.jsp</result>
+		</action>
 	</package>
 </struts>    
