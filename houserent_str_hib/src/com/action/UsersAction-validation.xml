@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE validators PUBLIC 
+  		"-//Apache Struts//XWork Validator 1.0.2//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="user.name">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="register.name.null"></message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">10</param>
+			<param name="minLength">6</param>
+			<message key="register.name.length"></message>
+		</field-validator>
+	</field>
+	
+	<field name="repassword">
+		<field-validator type="requiredstring">
+			<message key="register.password.null"></message>
+		</field-validator>
+		<field-validator type="fieldexpression">
+			<param name="expression">user.password==repassword</param>
+			<message key="register.password.length"></message>
+		</field-validator>
+	</field>
+	
+	<field name="user.telephone">
+		<field-validator type="requiredstring">
+			<message key="register.telephone"></message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="regex">^(\d{3,4}-){0,1}(\d{7,8})$)</param>
+			<message key="register.telephone.format"></message>
+		</field-validator>
+	</field>
+	
+</validators>  	
