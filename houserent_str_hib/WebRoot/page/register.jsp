@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<dd class="past"><s:text name="register.infoform"></s:text></dd>
 		</dl>
 		<a href="/houserent_str_hib/language!chinese.action"><s:text name="register.cn"></s:text></a>
-		<a href="/houserent_str_hib/language!chinese.action"><s:text name="register.hk"></s:text></a>
+		<a href="/houserent_str_hib/language!twchinese.action"><s:text name="register.hk"></s:text></a>
 		<a href="/houserent_str_hib/language!englise.action"><s:text name="register.en"></s:text></a>
 		<div class="box">
 			<form action="registeruser.action" method="post">

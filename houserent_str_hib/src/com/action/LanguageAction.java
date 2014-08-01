@@ -18,6 +18,15 @@ public class LanguageAction extends ActionSupport {
 		return SUCCESS;
 	}
 
+	public String twchinese() {
+		ActionContext.getContext().setLocale(Locale.TAIWAN);
+		ServletActionContext
+				.getRequest()
+				.getSession()
+				.setAttribute("WW_TRANS_I18N_LOCALE", Locale.TAIWAN);
+		return SUCCESS;
+	}
+	
 	public String englise(){
 		ActionContext.getContext().setLocale(Locale.US);
 		ServletActionContext.getRequest().getSession().setAttribute("WW_TRANS_I18N_LOCALE",Locale.US);
