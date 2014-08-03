@@ -9,7 +9,7 @@ import com.service.GoodsService;
 import com.service.impl.GoodsServiceImpl;
 
 public class OrdersAction extends ActionSupport {
-	 
+	 //laptop git test
 	private List<Goods> goodsList =new ArrayList<Goods>();//商品列表
 	private Integer[] gids;//商品id
 	private Goods goods;//商品
