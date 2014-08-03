@@ -18,7 +18,7 @@ public class OrdersAction extends ActionSupport {
 	 * 显示商品列表
 	 * @return
 	 */
-	private String a;
+	private String ab;
 	public String showGoods(){
 	
 		try {
