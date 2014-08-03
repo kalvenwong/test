@@ -18,8 +18,9 @@ public class OrdersAction extends ActionSupport {
 	 * 显示商品列表
 	 * @return
 	 */
+	private String a;
 	public String showGoods(){
-		
+	
 		try {
 			 goodsList=gs.findAll();
 			 for (Goods g : goodsList) {
