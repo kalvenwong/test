@@ -19,7 +19,7 @@ public class OrdersAction extends ActionSupport {
 	 * @return
 	 */
 	public String showGoods(){
-		
+		//git test
 		try {
 			 goodsList=gs.findAll();
 			 for (Goods g : goodsList) {
