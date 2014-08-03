@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="goods" extends="struts-default" namespace="/">
+	<!-- 显示商品 -->
+	<action name="showGoods" class="com.action.OrdersAction" method="showGoods">
+		<result name="success">showGoods.jsp</result>
+		<result name="input">error.jsp</result>
+	</action>
+	
+	<!-- 订购商品 -->
+	<action name="buyGoods" class="com.action.OrdersAction" method="buyGoods">
+		<result name="success">addOrder.jsp</result>
+		<result name="input">error.jsp</result>
+	</action>
+	
+	<!-- 添加订单 -->
+	<action name="addorder" class="com.action.OrdersAction" method="addorder">
+		<result name="success">showOrder.jsp</result>
+		<result name="input">error.jsp</result>
+	</action>
+</package>
+</struts>    
